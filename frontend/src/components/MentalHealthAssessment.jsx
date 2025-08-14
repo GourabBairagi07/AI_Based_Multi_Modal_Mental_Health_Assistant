@@ -10,6 +10,7 @@ import {
   MessageSquare,
   Phone
 } from 'lucide-react';
+import ChatBot from './ChatBot';
 
 const MentalHealthAssessment = () => {
   const [activeTab, setActiveTab] = useState('text');
@@ -507,7 +508,18 @@ const MentalHealthAssessment = () => {
           </div>
         </motion.div>
 
-        {/* Chatbot Modal */}
+        {/* Chatbot Toggle Button */}
+        <button
+          onClick={() => setShowChatbot(true)}
+          className="fixed bottom-6 right-6 w-14 h-14 bg-gradient-to-r from-purple-600 to-indigo-600 text-white rounded-full flex items-center justify-center shadow-lg hover:shadow-xl hover:scale-105 transition-all z-40"
+          aria-label="Open AI Assistant"
+        >
+          <MessageSquare size={24} />
+        </button>
+
+        {/* Chatbot Component */}
+        <ChatBot isOpen={showChatbot} onClose={() => setShowChatbot(false)} />
+
         <AnimatePresence>
           {showChatbot && (
             <motion.div
