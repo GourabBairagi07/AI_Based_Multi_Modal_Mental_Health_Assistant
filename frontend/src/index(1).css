@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Ensure full-height layout so gradient backgrounds fill the viewport */
+html, body, #root {
+  height: 100%;
+}
+
+/* Reset minimal defaults without overriding Tailwind backgrounds */
+body {
+  margin: 0;
+  min-width: 320px;
+}
